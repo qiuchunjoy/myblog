@@ -1,3 +1,5 @@
+
+
 """blogproject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -19,6 +21,10 @@ from django.http import HttpResponse
 
 from blog.feeds import AllPostsRssFeed
 
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib import staticfiles
+
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('blog.urls')),
@@ -27,3 +33,4 @@ urlpatterns = [
     url(r'^search/', include('haystack.urls')),
     url(r'^all/rss/$', AllPostsRssFeed(), name='rss'),
 ]
+# urlpatterns += staticfiles_urlpatterns()

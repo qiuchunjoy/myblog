@@ -21,6 +21,7 @@
         span.highlighted {
             color: red;
         }
+
     </style>
 
     <!-- js -->
@@ -34,12 +35,15 @@
 <div class="container">
     <header id="site-header">
         <div class="row">
-            <div class="col-md-4 col-sm-5 col-xs-8">
+            <div class="col-md-4 col-sm-5 col-xs-7">
                 <div class="logo">
-                    <h1><a href="{% url 'blog:index' %}"><b>Channing's</b> &amp; Blog</a></h1>
+                    {#                    <h1 align="right"><a href="{% url 'blog:index' %}" ><b>Channing's</b> Blog</a></h1>#}
+                    {#                    <img src="/static/background.jpg" height="87" width="94">#}
+                    <h1 align="left"><a href="{% url 'blog:index' %}"><img src="/static/background.jpg" height="57.42"
+                                                                           width="62.04"><b>Channing's</b> Blog</a></h1>
                 </div>
             </div><!-- col-md-4 -->
-            <div class="col-md-8 col-sm-7 col-xs-4">
+            <div class="col-md-8 col-sm-5 col-xs-4">
                 <nav class="main-nav" role="navigation">
                     <div class="navbar-header">
                         <button type="button" id="trigger-overlay" class="navbar-toggle">
@@ -74,6 +78,9 @@
 
 <div class="content-body">
     <div class="container">
+        {#        <div id="bg">#}
+        {#            <img src="{% static 'img/background.jpg' %}" alt="">#}
+        {#        </div>#}
         <div class="row">
             <main class="col-md-8">
                 {% block main %}
@@ -136,6 +143,7 @@
                             {% empty %}
                             暂无标签！
                         {% endfor %}
+
                     </ul>
                 </div>
 
@@ -154,9 +162,12 @@
                 {#                                                        target="_blank" title="模板之家">模板之家</a>#}
                 {#                    - 由<a href="http://zmrenwu.com/" title="网页模板" target="_blank">追梦人物的博客</a>修改#}
                 {#                </p>#}
-                <p class="copyright">&copy 2017 <a href="http://www.cssmoban.com/"
-                                                   target="_blank" title="channing">channing</a>
+                <p class="copyright">&copy 2017 <a href="https://www.zmrenwu.com/post/2/"
+                                                   target="_blank" title="channing">channing learn from <b>ZhuiMeng
+                    RenWu</b></a>
                     {#                    - 由<a href="http://zmrenwu.com/" title="网页模板" target="_blank">channing's blog</a>修改#}
+                    {#                    http://www.cssmoban.com/#}
+
                 </p>
             </div>
         </div>
@@ -169,6 +180,7 @@
     <nav>
         <ul>
             <li><a href="{% url 'blog:index' %}">首页</a></li>
+            <p><font size="7" face="Georgia, Arial" color="maroon">C</font>自定义你的字体以达到所需的外观。</p>
             <li><a href="#">博客</a></li>
             <li><a href="#">关于</a></li>
             <li><a href="#">联系</a></li>
